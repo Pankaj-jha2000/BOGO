@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.header-line {
+    height: 1px;
+    background-color: #ddd;
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #ff6b8a;
+    margin: 0 15px;
+    white-space: nowrap;
+}
+
+/* Option Card Styles */
+.option-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.option-card.popular {
+    border: 2px solid #ff6b8a;
+    position: relative;
+}
+
+.popular-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff6b8a;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-bottom-left-radius: 5px;
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-checkmark {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-container input:checked ~ .radio-checkmark {
+    border-color: #ff6b8a;
+}
+
+.radio-container input:checked ~ .radio-checkmark:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff6b8a;
+    display: block;
+}
+
+.option-title {
+    display: flex;
+    align-items: center;
+}
+
+.unit-text {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.discount-badge {
+    color: white;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.discount-10 {
+    background-color: #ff6b8a;
+}
+
+.discount-20 {
+    background-color: #ff6b8a;
+}
+
+.discount-30 {
+    background-color: #ff6b8a;
+}
+
+.price-container {
+    text-align: right;
+}
+
+.current-price {
+    font-weight: bold;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+
+.option-details {
+    padding: 0 15px 15px;
+    display: none;
+}
+
+.standard-price {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Variant Selectors */
+.variant-selectors {
+    width: 100%;
+}
+
+.variant-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.variant-row:last-child {
+    margin-bottom: 0;
+}
+
+.variant-number {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.variant-selects {
+    display: flex;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.select-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 10px;
+    color: #666;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Order Summary */
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.delivery-info {
+    color: #ff6b8a;
+}
+
+.total-price {
+    font-weight: bold;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    width: 100%;
+    background-color: #ff6b8a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.plus-icon {
+    margin-right: 5px;
+}
+
+/* Footer */
+.footer {
+    text-align: right;
+    color: #999;
+    font-size: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .option-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .price-container {
+        margin-top: 10px;
+        text-align: left;
+        margin-left: 30px;
+    }
+    
+    .variant-selects {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
